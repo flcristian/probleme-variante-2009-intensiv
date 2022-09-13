@@ -202,3 +202,33 @@ void atribuirePb12(int x[100][100], int n) {
 		y *= 10;
 	}
 }
+
+int countDiv(int n) {
+	int c = 0;
+	for (int i = 1; i <= n; i++) {
+		if (n % i == 0) {
+			c++;
+		}
+	}
+	return c;
+}
+
+int celMaiMicNrCuMaxDiv(int n) {
+	int max = 1;
+	for (int i = 1; i <= n; i++) {
+		if (countDiv(i) > max) {
+			max = i;
+		}
+	}
+	return max;
+}
+
+int countPb14(int x[], int n, int k) {
+	int c = 0;
+	for (int i = 0; i < n; i++) {
+		if (x[i] % k == 0 && x[i] % 10 == k) {
+			c++;
+		}
+	}
+	return c;
+}

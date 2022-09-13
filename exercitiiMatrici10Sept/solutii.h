@@ -367,3 +367,46 @@ void solutiePb12() {
 	afisareMatrice(x, 6, 6);
 }
 
+// Problema 13
+// Scrieţi un program C/C++ care citeşte de la tastatură un 
+// număr natural n (n≤32000) şi afişează pe ecran numărul natural 
+// din intervalul închis[1, n] care are cei mai mulţi divizori.
+// Dacă există mai multe numere cu această proprietate se va afişa 
+// cel mai mic dintre ele.
+//
+// Exemplu pentru n = 20 se afiseaza 12.
+
+void solutiePb13() {
+	int n;
+	cout << "Introduceti n : ";
+	cin >> n;
+	cout << celMaiMicNrCuMaxDiv(n);
+}
+
+// Problema 14
+// Scrieţi definiţia completă a subprogramului multiplu care 
+// are 3 parametri: a, prin care primeşte un tablou unidimensional 
+// cu maximum 100 de numere naturale mai mici decât 1000, n, 
+// numărul efectiv de elemente ale tabloului şi k, un număr 
+// natural(k≤9).
+// 
+// Subprogramul returnează numărul de elemente din tablou care 
+// sunt multipli ai numărului k şi au ultima cifră egală cu k.
+// 
+// Exemplu: dacă n = 6, a = (9, 273, 63, 83, 93, 123), iar k = 3, 
+// subprogramul va returna valoarea 4.
+
+void solutiePb14() {
+	int n, k;
+	cout << "Introduceti numarul de elemente : ";
+	cin >> n;
+	int x[100];
+	citirePb11(x, n);
+	cout << "Introduceti k : ";
+	cin >> k;
+	cout << "Raspunsul este " << countPb14(x, n, k) << "." << endl;
+}
+
+// Problema 15
+// 
+
