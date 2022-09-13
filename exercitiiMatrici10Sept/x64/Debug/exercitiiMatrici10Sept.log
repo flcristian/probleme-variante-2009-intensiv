@@ -1,0 +1,3 @@
+﻿  exercitiiMatrici10Sept.cpp
+D:\mycode\tablouribidimensionale\exercitiiMatrici10Sept\exercitiiMatrici10Sept\functii.h(75,17): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  exercitiiMatrici10Sept.vcxproj -> D:\mycode\tablouribidimensionale\exercitiiMatrici10Sept\x64\Debug\exercitiiMatrici10Sept.exe
