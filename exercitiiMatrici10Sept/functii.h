@@ -232,3 +232,24 @@ int countPb14(int x[], int n, int k) {
 	}
 	return c;
 }
+
+int countPb15(int x[], int n) {
+	int c = 0;
+	int s = 0, d = 0;
+
+	if (x[0] > x[n - 1]) {
+		s = x[n - 1];
+		d = x[0];
+	}
+	else {
+		d = x[n - 1];
+		s = x[0];
+	}
+
+	for (int i = 0; i < n; i++) {
+		if (x[i] >= s && x[i] <= d) {
+			c++;
+		}
+	}
+	return c;
+}

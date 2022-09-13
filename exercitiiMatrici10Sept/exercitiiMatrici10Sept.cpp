@@ -2,7 +2,7 @@
 
 int main()
 {
-	solutiePb14();
+	solutiePb15();
 }
 
 // 10

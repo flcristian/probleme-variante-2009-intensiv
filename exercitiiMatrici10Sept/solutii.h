@@ -408,5 +408,25 @@ void solutiePb14() {
 }
 
 // Problema 15
+// Scrieţi definiţia completă a subprogramului interval care 
+// are doi parametri a şi n, prin care primeşte un tablou 
+// unidimensional cu maximum 100 de numere naturale mai mici
+// decât 1000 şi respectiv numărul efectiv de elemente din 
+// tabloul unidimensional.
 // 
+// Subprogramul returnează numărul de elemente din tabloul 
+// unidimensional care aparţin intervalului închis determinat 
+// de primul şi respectiv ultimul element al tabloului.
+// 
+// Exemplu: dacă tabloul are 6 elemente şi este de forma
+// (12, 27, 6, 8, 9, 2), subprogramul va returna valoarea 5.
+
+void solutiePb15() {
+	int n;
+	cout << "Introduceti n : ";
+	cin >> n;
+	int x[100];
+	citirePb11(x, n);
+	cout << "Raspunsul este " << countPb15(x, n) << "." << endl;
+}
 
