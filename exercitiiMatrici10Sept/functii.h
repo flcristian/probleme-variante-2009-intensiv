@@ -364,3 +364,23 @@ double raspunsPb21(int x, int y) {
 	return rasp;
 }
 
+int raspunsPb22(int a, int b, int c) {
+	int count = 0;
+	for (int i = a; i < b + 1; i++) {
+		if (i % c == 0) {
+			count++;
+		}
+	}
+	return count;
+}
+
+int raspunsPb23(int x[], int n, int a, int b) {
+	int s = 0;
+	for (int i = 0; i < a; i++) {
+		s += x[i];
+	}
+	for (int i = b - 1; i < n; i++) {
+		s += x[i];
+	}
+	return s;
+}

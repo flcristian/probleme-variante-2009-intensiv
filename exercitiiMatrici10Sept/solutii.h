@@ -576,3 +576,49 @@ void solutiePb21() {
 	cin >> y;
 	cout << "Raspunsul este " << raspunsPb21(x, y);
 }
+
+// Problema 22
+// Scrieţi definiţia completă a subprogramului multipli, 
+// cu trei parametri a,b,c (a≤b), numere naturale din 
+// intervalul[1, 10000] ce returnează numărul numărul 
+// multiplilor lui c din intervalul[a; b].
+// 
+// Exemplu pentru a = 10, b = 27, c = 5 se afiseaza 4.
+
+void solutiePb22() {
+	int a, b, c;
+	cout << "Introduceti a : ";
+	cin >> a;
+	cout << "Introduceti b : ";
+	cin >> b;
+	cout << "Introduceti c : ";
+	cin >> c;
+	cout << "Raspunsul este " << raspunsPb22(a, b, c) << "." << endl;
+}
+
+// Problema 23
+// Scrieţi definiţia completă a subprogramului suma, 
+// care primeşte prin cei 4 parametri, v, n, i, j:
+// -v, un tablou unidimensional cu maximum 100 de elemente 
+//  întregi din intervalul [-1000, 1000], numerotate de 
+//  la 1 la n;
+// -n, un număr natural reprezentând numărul de elemente 
+//  din tabloul v;
+// -i şi j, două valori naturale cu 1≤i≤j≤100 şi returnează 
+//  suma elementelor v1, …vi - 1, vj + 1, …, …, vn din 
+//  tabloul v.
+
+void solutiePb23() {
+	int n, a, b;
+	cout << "Introduceti numarul termenilor : ";
+	cin >> n;
+	int x[100];
+	citirePb11(x, n);
+	cout << "Introduceti i : ";
+	cin >> a;
+	cout << "Introduceti j : ";
+	cin >> b;
+	cout << "Avem : " << endl;
+	afisareVector(x, n);
+	cout << endl << "Suma este " << raspunsPb23(x, n, a, b) << "." << endl;
+}
