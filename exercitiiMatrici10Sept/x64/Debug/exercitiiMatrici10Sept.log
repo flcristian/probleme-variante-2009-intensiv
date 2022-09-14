@@ -1,3 +1,5 @@
 ﻿  exercitiiMatrici10Sept.cpp
 D:\mycode\tablouribidimensionale\tema15sept\exercitiiMatrici10Sept\exercitiiMatrici10Sept\functii.h(75,17): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\mycode\tablouribidimensionale\tema15sept\exercitiiMatrici10Sept\exercitiiMatrici10Sept\functii.h(329): warning C4715: 'primStangaPb19': not all control paths return a value
+D:\mycode\tablouribidimensionale\tema15sept\exercitiiMatrici10Sept\exercitiiMatrici10Sept\functii.h(337): warning C4715: 'primDreaptaPb19': not all control paths return a value
   exercitiiMatrici10Sept.vcxproj -> D:\mycode\tablouribidimensionale\tema15sept\exercitiiMatrici10Sept\x64\Debug\exercitiiMatrici10Sept.exe

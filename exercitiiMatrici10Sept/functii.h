@@ -253,3 +253,114 @@ int countPb15(int x[], int n) {
 	}
 	return c;
 }
+
+void atribuirePb16(int x[100][100], int n) {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (i % 2 == 0) {
+				x[i][j] = (i + 1) + (j + 1);
+			}
+			else {
+				if (j == 0) {
+					x[i][j] = x[i - 1][j];
+				}
+				else {
+					x[i][j] = i + j;
+				}
+			}
+		}
+	}
+}
+
+void citirePb17(double x[], int n) {
+	for (int i = 0; i < n; i++) {
+		cout << "Introduceti valoarea a[" << i << "] : ";
+		cin >> x[i];
+	}
+}
+
+void afisareVectorPb17(double x[], int n) {
+	for (int i = 0; i < n; i++) {
+		cout << x[i] << " ";
+	}
+}
+
+void aranjarePb17(double x[], int n) {
+	bool flag = true;
+	do {
+		flag = true;
+		for (int i = 0; i < n - 1; i++) {
+			if (x[i] > 0 && x[i + 1] < 0) {
+				double r = x[i];
+				x[i] = x[i + 1];
+				x[i + 1] = r;
+				flag = false;
+			}
+		}
+	} while (flag == false);
+}
+
+bool estePrim(int n) {
+	if (countDiv(n) == 2) {
+		return true;
+	}
+	return false;
+}
+
+void aranjarePb18(int x[], int n) {
+	for (int i = 0, j = n - 1; i < j; i++) {
+		while (x[j] == 0) {
+			j--;
+		}
+		if (x[i] == 0) {
+			x[i] = x[j];
+			x[j] = 0;
+			j--;
+		}
+	}
+}
+
+int primStangaPb19(int n) {
+	for (int i = n; i > 1; i--) {
+		if (estePrim(i)) {
+			return i;
+		}
+	}
+}
+
+int primDreaptaPb19(int n) {
+	for (int i = n; i < 30001; i++) {
+		if (estePrim(i)) {
+			return i;
+		}
+	}
+}
+
+int raspunsPb19(int n) {
+	return primDreaptaPb19(n) - primStangaPb19(n);
+}
+
+void aranjarePb20(int x[], int m, int n) {
+	int r = x[0];
+	for (int i = 0; i < n; i++) {
+		if (i == n - 1) {
+			x[i] = r;
+		}
+		else {
+			x[i] = x[i + 1];
+		}
+	}
+}
+
+double raspunsPb21(int x, int y) {
+	int cateCifre = countCifre(y);
+	int z = 1;
+	while (cateCifre > 0) {
+		z *= 10;
+		cateCifre--;
+	} 
+	double rasp = x * z + y;
+	rasp /= z;
+	return rasp;
+}
+

@@ -430,3 +430,149 @@ void solutiePb15() {
 	cout << "Raspunsul este " << countPb15(x, n) << "." << endl;
 }
 
+// Problema 16
+// Scrieţi un program C/C++ care citeşte de la tastatură un 
+// număr natural n (2<n<20), construieşte în memorie şi afişează 
+// pe ecran o matrice cu n linii şi n coloane, numerotate
+// de la 1 la n, în care fiecare element aflat pe o linie 
+// impară este egal cu suma dintre indicii liniei şi coloanei pe 
+// care se află şi fiecare element aflat pe o linie pară este egal 
+// cu cel mai mic dintre elementele aflate pe linia anterioară şi 
+// pe aceeaşi coloană cu el sau pe linia anterioară şi pe una 
+// dintre coloanele vecine cu cea pe care se află el.
+// 
+// Elementele matricei vor fi afişate pe ecran, câte o linie a 
+// matricei pe câte o linie a ecranului cu câte un spaţiu între 
+// elementele fiecărei linii.
+//
+// Exemplu pentru n = 5 :
+//
+//			2 3 4 5 6
+//			2 2 3 4 5
+//			4 5 6 7 8
+//			4 4 5 6 7
+//			6 7 8 9 10
+
+void solutiePb16() {
+	int n;
+	cout << "Introduceti n : ";
+	cin >> n;
+	int x[100][100];
+	atribuirePb16(x, n);
+	afisareMatrice(x, n, n);
+}
+
+// Problema 17
+// Subprogramul aranjare are doi parametri: a prin care primeşte
+// un tablou unidimensional cu maximum 100 de numere reale nenule 
+// şi n, numărul de elemente din tablou.
+// 
+// Subprogramul rearanjează elementele tabloului unidimensional 
+// astfel încât toate valorile negative să se afle pe primele 
+// poziţii, iar valorile pozitive în continuarea celor negative.
+// 
+// Ordinea în cadrul secvenţei de elemente pozitive, respectiv 
+// în cadrul secvenţei de elemente negative, poate fi oricare.
+// 
+// Tabloul modificat va fi furnizat tot prin intermediul 
+// parametrului a.
+// 
+// Exemplu dacă tabloul are 6 elemente şi este de forma
+// (12, -7.5, 6.5, -3, -8, 7.5), după apel, acesta ar putea fi : 
+// 
+// (-7.5, -3, -8, 12, 6.5, 7.5).
+
+void solutiePb17() {
+	int n;
+	cout << "Introduceti numarul de elemente : ";
+	cin >> n;
+	double x[100];
+	citirePb17(x, n);
+	aranjarePb17(x, n);
+	afisareVectorPb17(x, n);
+}
+
+// Problema 18 
+// Subprogramul nule are doi parametri: a, prin care primeşte 
+// un tablou unidimensional cu maximum 100 de numere întregi, 
+// cu cel mult 4 cifre fiecare şi n, numărul de elemente din
+// tablou. 
+// 
+// Subprogramul rearanjează elementele tabloului unidimensional 
+// astfel încât toate valorile nule să se afle la sfârşitul tabloului.
+//
+// Ordinea în cadrul secvenţei de elemente nenule poate fi oricare.
+//  
+// Exemplu pentru n = 6, a = (12, 0, 0, -3, -8, 0) :
+// 
+//			(12, -3, -8, 0, 0, 0).
+
+void solutiePb18() {
+	int n; 
+	cout << "Introduceti numarul de elemente : ";
+	cin >> n;
+	int x[100];
+	citirePb11(x, n);
+	aranjarePb18(x, n);
+	afisareVector(x, n);
+}
+
+// Problema 19
+// Scrieţi definiţia completă a unui subprogram i_prim care 
+// primeşte prin singurul său parametru, n, un număr natural 
+// din intervalul[2, 30000] şi returnează diferenţa minimă
+// p2 - p1 în care p1 şi p2 sunt numere prime şi p1≤n≤p2.
+// 
+// Exemplu pentru n = 20 se afiseaza 4.
+
+void solutiePb19() {
+	int n;
+	cout << "Introduceti n : ";
+	cin >> n;
+	cout << "Raspunsul este " << raspunsPb19(n) << ".";
+}
+
+// Problema 20
+// Scrieţi definiţia completă a subprogramului shift care 
+// primeşte prin intermediul parametrului n o valoare 
+// naturală nenulă(n≤100), iar prin intermediul parametrului 
+// x, un tablou unidimensional cu maximum 100 de componente.
+// 
+// Fiecare componentă a acestui tablou este un număr întreg 
+// care are cel mult 4 cifre.Subprogramul permută circular 
+// cu o poziţie spre stânga primele n elemente ale tabloului 
+// x şi furnizează tabloul modificat tot prin parametrul x.
+// 
+// Exemplu pentru n = 4 şi x = (1, 2, 3, 4)
+//
+//			(2, 3, 4, 1)
+
+void solutiePb20() {
+	int m, n;
+	cout << "Introduceti numarul termenilor : ";
+	cin >> m;
+	cout << "Introduceti n : ";
+	cin >> n;
+	int x[100];
+	citirePb11(x, m);
+	aranjarePb20(x, m, n);
+	afisareVector(x, m);
+}
+
+// Problema 21
+// Scrieţi definiţa completă a subprogramului nreal cu doi 
+// parametri x şi y, numere naturale din intervalul[1; 1000] 
+// ce returnează un număr real cu proprietatea că partea sa 
+// întreagă este egală cu x, iar numărul format din zecimalele 
+// sale, în aceeaşi ordine, este egal cu y.
+// 
+// Exemplu pentru x = 12 şi y = 543, se afiseaza 12.543
+
+void solutiePb21() {
+	int x, y;
+	cout << "Introduceti x : ";
+	cin >> x;
+	cout << "Introduceti y : ";
+	cin >> y;
+	cout << "Raspunsul este " << raspunsPb21(x, y);
+}
