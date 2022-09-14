@@ -622,3 +622,46 @@ void solutiePb23() {
 	afisareVector(x, n);
 	cout << endl << "Suma este " << raspunsPb23(x, n, a, b) << "." << endl;
 }
+
+// Problema 24
+// Scrieţi definiţia completă a subprogramului suma care 
+// primeşte ca parametru un tablou unidimensional x cu cel 
+// mult 100 de elemente, numere reale, un număr natural n ce
+// reprezintă numărul efectiv de elemente ale tabloului 
+// x(n≤100), şi un număr natural m(n≥m). 
+// 
+// Subprogramul returnează suma obţinută din cele mai mici 
+// m elemente ale tabloului x.
+
+void solutiePb24() {
+	int n, m;
+	cout << "Introduceti numarul termenilor : ";
+	cin >> n;
+	cout << "Introduceti m : ";
+	cin >> m;
+	if (m > n) {
+		cout << "M nu poate fi mai mare decat N.";
+	}
+	else {
+		int x[100];
+		citirePb11(x, n);
+		cout << "Avem :" << endl;
+		afisareVector(x, n);
+		bubbleSort(x, n);
+		cout << endl << "Suma este " << raspunsPb24(x, n, m) << "." << endl;
+	}
+}
+
+// Problema 25
+// Scrieţi definiţia completă a subprogramului nr_prim care 
+// are ca parametru un număr natural x şi returnează cel 
+// mai mic număr prim, strict mai mare decât x.
+// 
+// Exemplu pentru x = 25 se afiseaza 29.
+
+void solutiePb25() {
+	int x;
+	cout << "Introduceti x : ";
+	cin >> x;
+	cout << "Raspunsul este " << raspunsPb25(x) << ".";
+}

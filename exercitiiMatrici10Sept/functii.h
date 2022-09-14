@@ -376,11 +376,29 @@ int raspunsPb22(int a, int b, int c) {
 
 int raspunsPb23(int x[], int n, int a, int b) {
 	int s = 0;
-	for (int i = 0; i < a; i++) {
+	for (int i = 0; i < a - 1; i++) {
 		s += x[i];
 	}
-	for (int i = b - 1; i < n; i++) {
+	for (int i = b; i < n; i++) {
 		s += x[i];
 	}
 	return s;
+}
+
+int raspunsPb24(int x[], int n, int m) {
+	int s = 0;
+	for (int i = 0; i < m; i++) {
+		s += x[i];
+	}
+	return s;
+}
+
+int raspunsPb25(int x) {
+	int i = x;
+	while (i > x - 1) {
+		if (estePrim(i)) {
+			return i;
+		}
+		i++;
+	}
 }

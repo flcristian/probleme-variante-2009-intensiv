@@ -2,7 +2,5 @@
 
 int main()
 {
-	solutiePb23();
+	solutiePb25();
 }
-
-// 18
