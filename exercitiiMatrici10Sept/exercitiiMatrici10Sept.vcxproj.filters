@@ -26,15 +26,33 @@
     <ClInclude Include="functii.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="numere.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="NR1.txt">
+    <Text Include="BAC.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="NR2.txt">
+    <Text Include="numerePb27input.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="numerePb27output.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="BACout.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="nr1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="nr2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="matrice.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

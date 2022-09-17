@@ -402,3 +402,281 @@ int raspunsPb25(int x) {
 		i++;
 	}
 }
+
+void citireFisier(int x[], int& n) {
+	ifstream f("BAC.txt");
+	f >> n;
+	for (int i = 0; i < n; i++) {
+		f >> x[i];
+	}
+}
+
+bool estePatratPerfect(int n) {
+	double x = sqrt(n);
+	if (x == ceil(x)) {
+		return true;
+	}
+	return false;
+}
+
+int countPatratePerfecte(int x[], int n) {
+	int c = 0;
+	for (int i = 0; i < n; i++) {
+		if (estePatratPerfect(x[i])) {
+			c++;
+		}
+	}
+	return c;
+}
+
+int afisareRaspunsPb26(int x[], int n) {
+	int c = countPatratePerfecte(x, n);
+	int s = 0;
+	for (int i = 0; i < n; i++) {
+		if (estePatratPerfect(x[i])) {
+			cout << x[i];
+			s += x[i];
+			if (c > 1) {
+				cout << "+";
+				c--;
+			}
+			else {
+				cout << "=" << s;
+				return 0;
+			}
+		}
+	}
+}
+
+void citireFisierPb27(int x[], int& n) {
+	ifstream f("numerePb27input.txt");
+	n = 0;
+
+	while (!f.eof()) {
+		f >> x[n];
+		n++;
+	}
+}
+
+void eliminareElement(int x[], int& n, int p) {
+	for (int i = p; i < n - 1; i++) {
+		x[i] = x[i + 1];
+	}
+	n--;
+}
+
+int variabilaNrCifrePb27(int count) {
+	int z = 1;
+	while (count > 1) {
+		z *= 10;
+		count--;
+	}
+	return z;
+}
+
+int eliminareCifreImpare(int n) {
+	int count = countCifre(n);
+	int z = variabilaNrCifrePb27(count);
+	while (z > 0) {
+		if ((n / z) % 2 == 1 || (n / z) == 0) {
+			n = n / (z * 10) * z + (n % z);
+		}
+		z /= 10;
+	}
+	if (n == 0) {
+		return -1;
+	}
+	return n;
+}
+
+void rezolvarePb27(int x[], int& n) {
+	for (int i = 0; i < n; i++) {
+		int variabila = eliminareCifreImpare(x[i]);
+		if (variabila == -1) {
+			eliminareElement(x, n, i);
+			i--;
+		}
+		else {
+			x[i] = variabila;
+		}
+	}
+}
+
+void outputPb27(int x[], int n) {
+	ofstream o("numerePb27output.txt");
+
+	for (int i = 0; i < n; i++) {
+		o << x[i] << " ";
+	}
+}
+
+void citireFisierPb28(int x[], int& n) {
+	ifstream f("BAC.txt");
+	n = 0;
+
+	while (!f.eof()) {
+		f >> x[n];
+		n++;
+	}
+}
+
+int sumaCifrelor(int n) {
+	int s = 0;
+	while (n != 0) {
+		s += n % 10;
+		n /= 10;
+	}
+	return s;
+}
+
+void raspunsPb28(int x[], int n) {
+	int c = n / 5, z = 5;
+	int count = 0;
+	for (int i = 0; i < n; c--) {
+		if (c == 0) {
+			z = n % 5;
+		}
+		for (int j = 0; j < z; j++) {
+			if (sumaCifrelor(x[i]) % 2 == 0) {
+				count++;
+			}
+			cout << x[i] << " ";
+			i++;
+		}
+		cout << endl;
+	}
+	cout << count;
+}
+
+void citirePb29(int x[], int& n) {
+	ifstream f("BAC.txt");
+	n = 0;
+
+	while (!f.eof()) {
+		f >> x[n];
+		n++;
+	}
+}
+
+int countImpareVector(int x[], int n) {
+	int c = 0;
+	for (int i = 0; i < n; i++) {
+		if (x[i] % 2 == 1) {
+			c++;
+		}
+	}
+	return c;
+}
+
+void rezolvarePb29(int x[], int n) {
+	ofstream o("BACout.txt");
+	cout << "In fisier a fost scris : " << endl;
+	int c = countImpareVector(x, n);
+
+	if (c < 2) {
+		cout << "Numere insuficiente.";
+		o << "Numere insuficiente.";
+	}
+	else {
+		for (int i = n - 1, z = 0; i > -1 && z < 2; i--) {
+			if (x[i] % 2 == 1) {
+				cout << x[i] << " ";
+				o << x[i] << " ";
+				z++;
+			}
+		}
+	}
+}
+
+void citirePb30(int x[], int& n) {
+	ifstream f("numere.txt");
+	n = 0;
+
+	while (!f.eof()) {
+		f >> x[n];
+		n++;
+	}
+}
+
+void adaugareCifreNumar(int y[], int x[], int i, int& m) {
+	while (x[i] != 0) {
+		y[m] = x[i] % 10;
+		x[i] /= 10;
+		m++;
+	}
+}
+
+void atribuire0Frecventa(int x[], int d) {
+	for (int i = 0; i < d; i++) {
+		x[i] = 0;
+	}
+}
+
+void adaugareCifreFrecventa(int y[], int n) {
+	while (n != 0) {
+		y[n % 10]++;
+		n /= 10;
+	}
+}
+
+void raspunsPb30(int x[], int n) {
+	int y[10];
+	atribuire0Frecventa(y, 10);
+	for (int i = 0; i < n; i++) {
+		adaugareCifreFrecventa(y, x[i]);
+	}
+	
+	for (int i = 9; i > -1; i--) {
+		for (int c = y[i]; c > 0; c--) {
+			cout << i;
+		}
+	}
+}
+
+int cateNrMaiMiciDecatM(int x[], int n, int m) {
+	int c = 0;
+	for (int i = 0; i < n; i++) {
+		if (m > x[i]) {
+			c++;
+		}
+	}
+	return c;
+}
+
+void citireFisierPb32nr1(int x[], int& n) {
+	ifstream f("nr1.txt");
+	n = 0;
+
+	while (!f.eof()) {
+		f >> x[n];
+		n++;
+	}
+}
+
+void citireFisierPb32nr2(int x[], int& n) {
+	ifstream f("nr2.txt");
+	n = 0;
+
+	while (!f.eof()) {
+		f >> x[n];
+		n++;
+	}
+}
+
+
+void adaugareNumereLaVectorDacaNuAuMaiAparut(int x[], int aparitie[], int raspuns[], int n, int& j) {
+	for (int i = 0; i < n; i++) {
+		if (aparitie[x[i]] == 0) {
+			raspuns[j] = x[i];
+			j++;
+			aparitie[x[i]]++;
+		}
+	}
+}
+
+void raspunsPb32(int x[], int y[], int n, int m, int raspuns[], int& j) {
+	int aparitie[10000];
+	adaugareNumereLaVectorDacaNuAuMaiAparut(x, aparitie, raspuns, n, j);
+	adaugareNumereLaVectorDacaNuAuMaiAparut(y, aparitie, raspuns, m, j);
+	afisareVector(raspuns, j);
+}

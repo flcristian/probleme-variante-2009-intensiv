@@ -131,12 +131,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functii.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="solutii.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="BAC.txt" />
+    <Text Include="BACout.txt" />
+    <Text Include="matrice.txt" />
+    <Text Include="nr1.txt" />
+    <Text Include="nr2.txt" />
     <Text Include="numere.txt" />
-    <Text Include="NR1.txt" />
-    <Text Include="NR2.txt" />
+    <Text Include="numerePb27input.txt" />
+    <Text Include="numerePb27output.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

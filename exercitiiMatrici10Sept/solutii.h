@@ -665,3 +665,232 @@ void solutiePb25() {
 	cin >> x;
 	cout << "Raspunsul este " << raspunsPb25(x) << ".";
 }
+
+// Problema 26
+// Pe prima linie a fişierului text BAC.TXT se află o valoare 
+// naturală n (1<n≤50), iar pe a doua linie n numere naturale 
+// cu maximum 4 cifre fiecare, despărţite prin câte un spaţiu.
+// În şirul numerelor de pe a doua linie a fişierului există 
+// cel pzâin două numere pătrate perfecte.
+// 
+// Scrieţi un program C / C++ care citeşte toate numerele din 
+// fişier şi afişează pe ecran expresia aritmetică 
+// reprezentând suma numerelor de pe a doua linie a fişierului 
+// care au proprietatea că sunt pătrate perfecte, cu simbolul 
+// + între ele şi, după un semn =, valoarea acestei sume, ca 
+// în exemplu.
+// Termenii sumei afişate se pot afla în orice ordine.
+// 
+// Exemplu dacă fişierul BAC.TXT are următorul conţinut
+// 5
+// 9 5 36 9 8
+// atunci pe ecran se poate afişa :
+
+void solutiePb26() {
+	int n = 0;
+	int x[100];
+	citireFisier(x, n);
+	afisareRaspunsPb26(x, n);
+}
+
+// Problema 27
+// Se consideră subprogramul P care are doi parametri:
+// – n, prin intermediul căruia primeşte un număr natural 
+//  de cel mult 9 cifre
+// – c, prin intermediul căruia primeşte o cifră.
+// 
+// Subprogramul va furniza tot prin intermediul parametrului 
+// n numărul obţinut din n prin eliminarea tuturor apriţiilor 
+// cifrei c.Dacă, după eliminare, numărul nu mai conţine nicio 
+// cifră sau conţine doar cifre 0, rezultatul returnat va fi 0.
+// 
+// a) Scrieţi doar antetul subprogramului P. (2p.)
+// b) Pe prima linie a fişierului text BAC.IN se găsesc, 
+// separate prin câte un spaţiu, mai multe numere naturale 
+// de cel mult 9 cifre fiecare.Scrieţi programul C / C++ care 
+// citeşte numerele din acest fişier, utilizând apeluri ale 
+// subprogramului P elimină toate cifrele impare din fiecare
+// dintre aceste numere şi apoi scrie în fişierul text BAC.OUT 
+// numerele astfel obţinute, separate prin câte un spaţiu.
+// 
+// Dacă un număr din fişierul BAC.IN nu conţine nicio cifră 
+// pară nenulă, acesta nu va mai apărea deloc în fişierul de 
+// ieşire. (8p.)
+// 
+// Exemplu dacă fişierul BAC.IN conţine numerele 
+// 25 7 38 1030 45127 0 35 60 15,
+// 
+// atunci BAC.OUT va avea conţinutul : 
+// 2 8 42 60.
+
+void solutiePb27() {
+	int n = 0;
+	int x[100];
+	citireFisierPb27(x, n);
+	rezolvarePb27(x, n);
+	outputPb27(x, n);
+}
+
+// Problema 28
+// Fişierul text BAC.TXT conţine mai multe numere naturale, cu 
+// cel mult 6 cifre fiecare, câte un număr pe fiecare linie a 
+// fişierului.
+// 
+// Scrieţi un program C / C++ care citeşte toate numerele din 
+// fişierul BAC.TXT şi le afişează pe ecran, în aceeaşi ordine, 
+// câte cinci pe fiecare linie, separate prin câte un spaţiu, 
+// cu excepţia ultimei linii care poate conţine mai puţin de 
+// cinci numere.
+// 
+// Programul va afişa apoi pe ecran, pe o linie separată, 
+// câte numere din fişier au suma cifrelor pară.
+// 
+// Exemplu dacă fişierul are :
+// 11 21 30 40 51 16 17 10 1
+// 
+// Se afiseaza : 
+// 
+//	11 21 30 40 51
+//	16 17 10 1
+//	4
+
+void solutiePb28() {
+	int n = 0;
+	int x[100];
+	citireFisierPb28(x, n);
+	cout << "Avem : " << endl;
+	afisareVector(x, n);
+	cout << "Raspunsul este : " << endl << endl;
+	raspunsPb28(x, n);
+}
+
+// Problema 29
+// În fişierul text BAC.IN se găsesc, pe o singură linie, 
+// separate prin câte un spaţiu, mai multe numere naturale 
+// de cel mult 6 cifre fiecare.Se cere să se determine şi 
+// să se afişeze pe ecran, separate printr - un spaţiu, 
+// ultimele două numere impare(nu neapărat distincte) din
+// fişierul BAC.IN.
+// 
+// Dacă în fişier se găseşte un singur număr impar sau 
+// niciun număr impar se va scrie pe ecran mesajul 
+// Numere insuficiente.
+// 
+// Exemplu dacă fişierul BAC.IN conţine valorile : 
+// 12 15 68 13 17 90 31 42 
+// 
+// Se va afisa : 
+// 17 31.
+
+void solutiePb29() {
+	int n = 0;
+	int x[100];
+	citirePb29(x, n);
+	cout << "Avem : " << endl;
+	afisareVector(x, n);
+	cout << endl;
+	rezolvarePb29(x, n);
+}
+
+// Problema 30
+// În fişierul numere.txt sunt memorate maximum 10000 de 
+// numere naturale cu cel mult 9 cifre fiecare.Fiecare linie 
+// a fişierului conţine câte un număr.Se cere afişarea pe ecran, 
+// în ordine descrescătoare, a tuturor cifrelor care apar în 
+// numerele din fişier.
+// 
+// Alegeţi un algoritm de rezolvare eficient din punct de vedere 
+// al timpului de executare.
+// 
+// Exemplu dacă fişierul numere.txt conţine :
+// 267
+// 39628
+// 79
+//
+// Se afiseaza : 
+// 9987766322
+
+void solutiePb30() {
+	int n = 0;
+	int x[100];
+	citirePb30(x, n);
+	cout << "Avem : " << endl;
+	afisareVector(x, n);
+	cout << endl << "Raspunsul este : " << endl;
+	raspunsPb30(x, n);
+}
+
+// Problema 31
+// În fişierul numere.txt pe prima linie este memorat un 
+// număr natural n (n≤10000), iar pe linia următoare un şir 
+// de n numere naturale distincte două câte două, separate prin 
+// câte un spaţiu, cu maximum 4 cifre fiecare.Se cere afişarea 
+// pe ecran a poziţiei pe care s - ar găsi primul element din 
+// şirul aflat pe linia a doua a fişierului, în cazul în care 
+// şirul ar fi ordonat crescător. 
+// 
+// Numerotarea poziţiilor elementelor în cadrul şirului este de 
+// la 1 la n.
+// 
+// Alegeţi un algoritm de rezolvare eficient din punct de vedere 
+// al memoriei utilizate şi al timpului de executare.
+// 
+// Exemplu dacă fişierul numere.txt conţine :
+// 267 13 45 628 7 79
+// 
+// Se va afişa 5, deoarece primul element din şirul iniţial, 
+// 267, s - ar găsi pe poziţia a cincea în şirul ordonat 
+// crescător(7 13 45 79 267 628).
+
+void solutiePb31() {
+	int n = 0;
+	int x[100];
+	citirePb30(x, n);
+	cout << "Avem : " << endl;
+	afisareVector(x, n);
+	cout << endl << "Raspunsul este :" << endl;
+	cout << cateNrMaiMiciDecatM(x, n, x[0]) + 1;
+}
+
+// Problema 32
+// În fişierul nr1.txt este memorată pe prima linie o valoare 
+// naturală n de cel mult 8 cifre, iar pe linia următoare sunt 
+// memorate n numere naturale, cu maximum 4 cifre fiecare,
+// ordonate strict crescător şi separate prin câte un spaţiu.
+// 
+// În fişierul nr2.txt este memorată pe prima linie o valoare 
+// naturală m de cel mult 8 cifre, iar pe linia următoare sunt 
+// memorate m numere naturale, cu maximum 4 cifre fiecare, 
+// ordonate strict crescător şi separate prin câte un spaţiu.
+// 
+// Se cere afişarea pe ecran, separate prin câte un spaţiu, în 
+// ordine strict crescătoare, a tuturor numerelor aflate pe a doua 
+// linie în cel puţin unul dintre cele două fişiere.
+// 
+// În cazul în care un număr apare în ambele fişiere, el va fi 
+// afişat o singură dată.
+// 
+// Alegeţi un algoritm de rezolvare eficient din punct de vedere 
+// al memoriei utilizate şi al timpului de executare.
+// 
+// Exemplu: pentru următoarele fişiere :
+// nr1.txt						nr2.txt
+// 5							6
+// 3 6 8 9 12					2 3 5 7 9 13
+// 
+// Se va afişa :
+// 2 3 5 6 7 8 9 12 13
+
+void solutiePb32() {
+	int n = 0, m = 0;
+	int x[100], y[100];
+	citireFisierPb32nr1(x, n);
+	citireFisierPb32nr2(y, m);
+	cout << "Avem : " << endl;
+	afisareVector(x, n);
+	afisareVector(y, m);
+
+	int j = 0;
+	int raspuns[100];
+	raspunsPb32(x, y, n, m, raspuns, j);
+}
